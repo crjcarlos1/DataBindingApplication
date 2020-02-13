@@ -6,7 +6,7 @@
 
         <variable
             name="user"
-            type="com.cralos.myapplication2.fragments.fonts.models.User" />
+            type="com.cralos.myapplication2.fragments.searchview.withlistview.models.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="12dp"
                     android:customFont="@{@string/comicFont}"
-                    android:text="@{user.userName}"
+                    android:text="@{user.name}"
                     android:textColor="@android:color/black"
                     android:textSize="28sp"
                     android:textStyle="bold"
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
-                    android:text="@{user.email}"
+                    android:text="@{user.lastName}"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="6dp"
-                    android:text="@{user.job}"
+                    android:text="@{String.valueOf(user.age)}"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"

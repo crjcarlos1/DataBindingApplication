@@ -14,7 +14,7 @@ import com.cralos.myapplication2.fragments.fonts.models.User;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private List<User> users;
     private Context context;
@@ -27,7 +27,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemUserBinding binding= DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_user,parent,false);
+        ItemUserBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_user, parent, false);
         return new ViewHolder(binding);
     }
 

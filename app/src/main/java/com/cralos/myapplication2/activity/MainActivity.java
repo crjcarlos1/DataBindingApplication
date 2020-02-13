@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.cralos.myapplication2.R;
 import com.cralos.myapplication2.fragments.fonts.view.FragmentFonts;
+import com.cralos.myapplication2.fragments.searchview.withlistview.view.FragmentSearchview;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showFragmentFont();
+        showFragmentSearchView();
     }
 
     private void showFragmentFont() {
@@ -23,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.addToBackStack(FragmentFonts.TAG);
         transaction.replace(R.id.containerFragment, new FragmentFonts(), FragmentFonts.TAG).commit();
+    }
+
+    private void showFragmentSearchView() {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.addToBackStack(FragmentSearchview.TAG);
+        transaction.replace(R.id.containerFragment, new FragmentSearchview(), FragmentSearchview.TAG).commit();
     }
 
 }
