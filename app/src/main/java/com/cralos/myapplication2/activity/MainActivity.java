@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.cralos.myapplication2.R;
+import com.cralos.myapplication2.fragments.codingwithmitch.view.FragmentCodingwithmitch;
 import com.cralos.myapplication2.fragments.fonts.view.FragmentFonts;
 import com.cralos.myapplication2.fragments.searchview.withlistview.view.FragmentSearchview;
 import com.cralos.myapplication2.fragments.searchview.withrecyclerview.withdatabinding.view.FragmentSearchViewWithDatabinding;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showFragmentRvWithDatabinding();
+        showFragmentCodingwithmitch();
     }
 
     private void showFragmentFont() {
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.addToBackStack(FragmentSearchViewWithDatabinding.TAG);
         transaction.replace(R.id.containerFragment, new FragmentSearchViewWithDatabinding(), FragmentSearchViewWithDatabinding.TAG).commit();
+    }
+
+    private void showFragmentCodingwithmitch() {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.addToBackStack(FragmentCodingwithmitch.TAG);
+        transaction.replace(R.id.containerFragment, new FragmentCodingwithmitch(), FragmentCodingwithmitch.TAG).commit();
     }
 
 }
