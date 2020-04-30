@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.cralos.myapplication2.R;
 import com.cralos.myapplication2.fragments.fonts.view.FragmentFonts;
 import com.cralos.myapplication2.fragments.searchview.withlistview.view.FragmentSearchview;
+import com.cralos.myapplication2.fragments.searchview.withrecyclerview.withdatabinding.view.FragmentSearchViewWithDatabinding;
+import com.cralos.myapplication2.fragments.searchview.withrecyclerview.withoutDatabinding.view.FragmentRvWithoutDataBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showFragmentSearchView();
+        showFragmentRvWithDatabinding();
     }
 
     private void showFragmentFont() {
@@ -31,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.addToBackStack(FragmentSearchview.TAG);
         transaction.replace(R.id.containerFragment, new FragmentSearchview(), FragmentSearchview.TAG).commit();
+    }
+
+    private void showFragmentRvWitouDatabinding() {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.addToBackStack(FragmentRvWithoutDataBinding.TAG);
+        transaction.replace(R.id.containerFragment, new FragmentRvWithoutDataBinding(), FragmentRvWithoutDataBinding.TAG).commit();
+    }
+
+    private void showFragmentRvWithDatabinding() { /*SEARCHVIEW*/
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.addToBackStack(FragmentSearchViewWithDatabinding.TAG);
+        transaction.replace(R.id.containerFragment, new FragmentSearchViewWithDatabinding(), FragmentSearchViewWithDatabinding.TAG).commit();
     }
 
 }
