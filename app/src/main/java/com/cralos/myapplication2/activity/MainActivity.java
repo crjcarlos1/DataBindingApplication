@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showFragmentCodingwithmitch() {
+        /**     this example is here: https://github.com/mitchtabian/DataBindingGettingStarted/     */
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.addToBackStack(FragmentCodingwithmitch.TAG);
